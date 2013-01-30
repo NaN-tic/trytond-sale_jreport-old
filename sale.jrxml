@@ -5,7 +5,7 @@
 	<property name="ireport.y" value="99"/>
 	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["/Users/resteve/ireports/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="TAXES_DS" class="java.lang.Object"/>
 	<queryString language="xPath">
