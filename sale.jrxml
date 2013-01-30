@@ -161,7 +161,7 @@
 					<textElement textAlignment="Center">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA[tr($V{L},"Qtat.")]]></textFieldExpression>
+					<textFieldExpression><![CDATA[tr($V{L},"Qty")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="407" y="272" width="50" height="12"/>
@@ -201,7 +201,7 @@
 					<textElement textAlignment="Right">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA[tr($V{L},"DTE.")]]></textFieldExpression>
+					<textFieldExpression><![CDATA[tr($V{L},"DISC")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="10" y="138" width="279" height="21" forecolor="#010101">
