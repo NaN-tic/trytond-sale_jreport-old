@@ -7,8 +7,5 @@ from .sale import *
 
 def register():
     Pool.register(
-        Sale,
-        module='sale_jreport', type_='model')
-    Pool.register(
         SaleReport,
         module='sale_jreport', type_='report')
