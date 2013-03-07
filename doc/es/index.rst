@@ -4,8 +4,8 @@ Sale Jasper Report Module
 
 Reemplaza los informes de venta por defecto de Tryton por informes de Jasper.
 
-Módulos que dependen
-====================
+Módulos de los que depende
+==========================
 
 Instalados
 ----------
