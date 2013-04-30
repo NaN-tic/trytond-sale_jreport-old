@@ -1,0 +1,63 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "jasper:sale.sale:"
+msgid "Carrier"
+msgstr "Mensajero"
+
+msgctxt "jasper:sale.sale:"
+msgid "Date"
+msgstr "Fecha"
+
+msgctxt "jasper:sale.sale:"
+msgid "DISC"
+msgstr "Desc."
+
+msgctxt "jasper:sale.sale:"
+msgid "Description"
+msgstr "Descripción"
+
+msgctxt "jasper:sale.sale:"
+msgid "Price"
+msgstr "Precio"
+
+msgctxt "jasper:sale.sale:"
+msgid "Qty"
+msgstr "Ctd."
+
+msgctxt "jasper:sale.sale:"
+msgid "Quotation"
+msgstr "Presupuesto"
+
+msgctxt "jasper:sale.sale:"
+msgid "Payment Term"
+msgstr "Plazo de pago"
+
+msgctxt "jasper:sale.sale:"
+msgid "Payment Type"
+msgstr "Tipo de pago"
+
+msgctxt "jasper:sale.sale:"
+msgid "Sale Order"
+msgstr "Comanda venda"
+
+msgctxt "jasper:sale.sale:"
+msgid "Salesman"
+msgstr "Comercial"
+
+msgctxt "jasper:sale.sale:"
+msgid "Shipment Address"
+msgstr "Dirección de envío"
+
+msgctxt "jasper:sale.sale:"
+msgid "Tax"
+msgstr "Impuestos"
+
+msgctxt "jasper:sale.sale:"
+msgid "Untaxed"
+msgstr "Base imponible"
+
+msgctxt "jasper:sale.sale:"
+msgid "Total"
+msgstr "Total"
