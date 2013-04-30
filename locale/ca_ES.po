@@ -56,7 +56,7 @@ msgstr "Imposts"
 
 msgctxt "jasper:sale.sale:"
 msgid "Untaxed"
-msgstr "Base imponible"
+msgstr "Base imposable"
 
 msgctxt "jasper:sale.sale:"
 msgid "Total"
