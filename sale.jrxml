@@ -134,6 +134,9 @@
 	<field name="user-email" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/create_uid-create_uid/email-email]]></fieldDescription>
 	</field>
+	<field name="gross_unit_price-gross_unit_price" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/lines-lines/gross_unit_price-gross_unit_price]]></fieldDescription>
+	</field>
 	<variable name="L" class="java.util.Locale">
 		<variableExpression><![CDATA[$F{party-lang} != null && $F{party-lang}.length() == 5 ? new Locale($F{party-lang}.substring(0,2)) : ( $F{party-lang} != null && $F{party-lang}.length() == 2 ? new Locale($F{party-lang}.substring(0,2)) : new Locale('en_US'))]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{party-lang} != null && $F{party-lang}.length() == 5 ? new Locale($F{party-lang}.substring(0,2)) : ( $F{party-lang} != null && $F{party-lang}.length() == 2 ? new Locale($F{party-lang}.substring(0,2)) : new Locale('en_US'))]]></initialValueExpression>
@@ -378,7 +381,7 @@
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{line-unit_price} ? (int)Double.valueOf($F{line-unit_price}.trim()).doubleValue() : '']]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gross_unit_price-gross_unit_price} ? $F{gross_unit_price-gross_unit_price} : $F{line-unit_price}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="56" y="16" width="348" height="1" isRemoveLineWhenBlank="true" forecolor="#808080"/>
@@ -399,7 +402,7 @@
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{line-discount} ? "-"+$F{line-discount}+"%" : ""]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{line-discount} ? "-"+ (int)Double.valueOf($F{line-discount}*100).doubleValue()+"%" : ""]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="16" y="2" width="40" height="12"/>
