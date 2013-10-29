@@ -371,10 +371,10 @@
 		<band height="19" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
 				<reportElement x="57" y="2" width="347" height="12"/>
-				<textElement>
+				<textElement markup="styled">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{line-description}]]></textFieldExpression>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{line-note} ? $F{line-description}+"\n<style forecolor=\"#808080\">"+$F{line-note}+"</style>" : $F{line-description}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00">
 				<reportElement x="407" y="2" width="50" height="12"/>
@@ -382,13 +382,6 @@
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{gross_unit_price-gross_unit_price} ? $F{gross_unit_price-gross_unit_price} : $F{line-unit_price}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="56" y="16" width="348" height="1" isRemoveLineWhenBlank="true" forecolor="#808080"/>
-				<textElement>
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{line-note}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00">
 				<reportElement x="490" y="2" width="50" height="12"/>
