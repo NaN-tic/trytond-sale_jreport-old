@@ -98,13 +98,13 @@
 	<field name="currency-code" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/currency-currency/code-code]]></fieldDescription>
 	</field>
-	<field name="total_amount-total_amount" class="java.lang.String">
+	<field name="total_amount-total_amount" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/total_amount-total_amount]]></fieldDescription>
 	</field>
-	<field name="untaxed_amount-untaxed_amount" class="java.lang.String">
+	<field name="untaxed_amount-untaxed_amount" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/untaxed_amount-untaxed_amount]]></fieldDescription>
 	</field>
-	<field name="tax_amount-tax_amount" class="java.lang.String">
+	<field name="tax_amount-tax_amount" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/tax_amount-tax_amount]]></fieldDescription>
 	</field>
 	<field name="currency-symbol" class="java.lang.String">
@@ -116,10 +116,10 @@
 	<field name="line-description" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/lines-lines/description-description]]></fieldDescription>
 	</field>
-	<field name="line-unit_price" class="java.lang.String">
+	<field name="line-unit_price" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/lines-lines/unit_price-unit_price]]></fieldDescription>
 	</field>
-	<field name="line-amount" class="java.lang.String">
+	<field name="line-amount" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/lines-lines/amount-amount]]></fieldDescription>
 	</field>
 	<field name="line-note" class="java.lang.String">
@@ -243,26 +243,26 @@
 		</groupHeader>
 		<groupFooter>
 			<band height="100" splitType="Prevent">
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
 					<reportElement x="430" y="57" width="95" height="14" uuid="656cea85-f02c-41bf-9e8a-90e24286e431"/>
 					<textElement textAlignment="Right">
 						<font fontName="DejaVu Sans" size="9" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{total_amount-total_amount}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{total_amount-total_amount} ? $F{total_amount-total_amount} : 0]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
 					<reportElement x="430" y="16" width="95" height="14" uuid="b3dd54c0-0d2f-44ba-8206-9da95d926c43"/>
 					<textElement textAlignment="Right">
 						<font size="9" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{untaxed_amount-untaxed_amount}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{untaxed_amount-untaxed_amount} ? $F{untaxed_amount-untaxed_amount} : 0]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
 					<reportElement x="430" y="34" width="95" height="14" uuid="56bc960d-c419-46cb-8320-4710d6893e4a"/>
 					<textElement textAlignment="Right">
 						<font size="9" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{tax_amount-tax_amount}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{tax_amount-tax_amount} ? $F{tax_amount-tax_amount} : 0]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="390" y="34" width="38" height="14" uuid="a7719139-d092-4421-ac55-9267952452a8"/>
@@ -383,14 +383,14 @@
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{gross_unit_price-gross_unit_price} ? $F{gross_unit_price-gross_unit_price} : $F{line-unit_price}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{gross_unit_price-gross_unit_price} ? $F{gross_unit_price-gross_unit_price} : $F{line-unit_price} ? $F{line-unit_price} : 0]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00">
 				<reportElement x="490" y="2" width="50" height="12" uuid="fba565ed-db97-4242-91ca-cece0bfef0c1"/>
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{line-amount}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{line-amount} ? $F{line-amount} : 0]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
 				<reportElement x="461" y="2" width="26" height="12" uuid="9651a8d5-b008-412f-bdeb-15a4634ed622"/>
