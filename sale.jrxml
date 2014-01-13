@@ -47,6 +47,9 @@
 	<field name="company-footer" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company-company/footer-footer]]></fieldDescription>
 	</field>
+	<field name="company-sale_qty" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company-company/sale_qty-sale_qty]]></fieldDescription>
+	</field>
 	<field name="party-full_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/full_name-full_name]]></fieldDescription>
 	</field>
@@ -404,7 +407,7 @@
 				<textElement textAlignment="Center">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{line-quantity} ? (int)Double.valueOf($F{line-quantity}.trim()).doubleValue() : '']]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{line-quantity} ? $F{company-sale_qty} ? (int)Double.valueOf($F{line-quantity}.trim()).doubleValue() : $F{line-quantity} : '']]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
