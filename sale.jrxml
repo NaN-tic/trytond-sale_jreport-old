@@ -74,11 +74,14 @@
 	<field name="party-lang" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/lang-lang/code-code]]></fieldDescription>
 	</field>
-	<field name="payment_term-name" class="java.lang.String">
+	<field name="payment_term-name" class="java.lang.Object">
 		<fieldDescription><![CDATA[/data/record/payment_term-payment_term/name-name]]></fieldDescription>
 	</field>
-	<field name="payment_type-name" class="java.lang.String">
+	<field name="payment_type-name" class="java.lang.Object">
 		<fieldDescription><![CDATA[/data/record/payment_type-payment_type/name-name]]></fieldDescription>
+	</field>
+	<field name="payment_type-note" class="java.lang.Object">
+		<fieldDescription><![CDATA[/data/record/payment_type-payment_type/note-note]]></fieldDescription>
 	</field>
 	<field name="shippment-full_address" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/addresses-addresses/full_address-full_address]]></fieldDescription>
@@ -224,7 +227,7 @@
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="100" splitType="Prevent">
+			<band height="104" splitType="Prevent">
 				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
 					<reportElement x="430" y="57" width="95" height="14" uuid="656cea85-f02c-41bf-9e8a-90e24286e431"/>
 					<textElement textAlignment="Right">
@@ -268,7 +271,7 @@
 					<textFieldExpression><![CDATA[tr($V{L},"Untaxed")+":"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="10" y="57" width="367" height="29" isRemoveLineWhenBlank="true" uuid="e47cc87a-2ba2-4334-8d89-8103abed4308"/>
+					<reportElement x="10" y="71" width="367" height="29" isRemoveLineWhenBlank="true" uuid="e47cc87a-2ba2-4334-8d89-8103abed4308"/>
 					<textElement>
 						<font size="9"/>
 					</textElement>
@@ -305,16 +308,16 @@
 					<reportElement x="10" y="3" width="530" height="1" uuid="b7222a06-bef9-4e1d-9d7a-be5d6923c473"/>
 				</line>
 				<textField>
-					<reportElement x="10" y="16" width="341" height="12" uuid="2ec6e329-9835-42af-bf17-bf12b2127f0b">
+					<reportElement x="10" y="16" width="367" height="12" uuid="2ec6e329-9835-42af-bf17-bf12b2127f0b">
 						<printWhenExpression><![CDATA[$F{payment_term-name} != '']]></printWhenExpression>
 					</reportElement>
 					<textElement>
 						<font size="9" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[tr($V{L},"Payment Term")+": "+$F{payment_term-name}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[tr($V{L},"Payment Term")+": "+$F{payment_term-name}.get($F{party-lang})]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="10" y="41" width="341" height="12" uuid="34ef4275-ed1a-439f-9507-c72ce6361d30">
+					<reportElement x="10" y="55" width="367" height="12" uuid="34ef4275-ed1a-439f-9507-c72ce6361d30">
 						<printWhenExpression><![CDATA[$F{carrier-rec_name} != '']]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -323,13 +326,13 @@
 					<textFieldExpression><![CDATA[tr($V{L},"Carrier")+": "+$F{carrier-rec_name}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="10" y="28" width="341" height="12" uuid="98c173b1-881b-4b80-b4bb-8f95ea8abdbd">
-						<printWhenExpression><![CDATA[$F{payment_type-name} != '']]></printWhenExpression>
+					<reportElement x="10" y="28" width="367" height="23" uuid="98c173b1-881b-4b80-b4bb-8f95ea8abdbd">
+						<printWhenExpression><![CDATA[$F{payment_type-name}.get($F{party-lang}) != null]]></printWhenExpression>
 					</reportElement>
 					<textElement>
 						<font size="9" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[tr($V{L},"Payment Type")+": "+$F{payment_type-name}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[tr($V{L},"Payment Type")+": "+$F{payment_type-name}.get($F{party-lang})+"\n"+$F{payment_type-note}.get($F{party-lang})]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupFooter>
