@@ -211,27 +211,6 @@
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Date")+": "+new SimpleDateFormat("dd'-'MM'-'yyyy").format($F{sale_date-sale_date})]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="66" y="38" width="127" height="12" uuid="09445380-9652-44d2-a4a0-082a8363a311"/>
-					<textElement>
-						<font size="9"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{user-name}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="66" y="50" width="127" height="12" uuid="78d55adc-58a2-498b-ae7a-a1ca7b18b755"/>
-					<textElement>
-						<font size="9"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{user-email}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="10" y="38" width="55" height="14" forecolor="#040202" uuid="72ab4cd8-68c6-4282-b331-f30f0cb5bc93"/>
-					<textElement textAlignment="Left">
-						<font size="9" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[tr($V{L},"Salesman")+": "]]></textFieldExpression>
-				</textField>
 				<line>
 					<reportElement x="10" y="152" width="530" height="1" uuid="94720de1-ef7d-4a5b-8911-761fdf921c0b"/>
 				</line>
