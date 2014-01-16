@@ -389,7 +389,7 @@
 				<textElement textAlignment="Center">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{line-quantity} ? $F{company-sale_qty} ? (int)Double.valueOf($F{line-quantity}.trim()).doubleValue() : Double.valueOf($F{line-quantity}.trim()).doubleValue() : '']]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{line-quantity} ? $F{company-sale_qty} ? (int)Double.valueOf($F{line-quantity}.trim()).doubleValue() : Double.valueOf($F{line-quantity}.trim()).doubleValue() : '0']]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
