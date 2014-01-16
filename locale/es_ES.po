@@ -24,7 +24,7 @@ msgstr "Precio"
 
 msgctxt "jasper:sale.sale:"
 msgid "Qty"
-msgstr "Ctd."
+msgstr "Cant."
 
 msgctxt "jasper:sale.sale:"
 msgid "Quotation"
