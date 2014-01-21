@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sale" language="i18ngroovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="797f10e7-0b3e-4c35-9d66-a649d6b4a5ef">
 	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="10"/>
+	<property name="ireport.y" value="9"/>
 	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
@@ -184,7 +184,7 @@
 					<textElement markup="styled">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica'>"+$F{party-full_name}+"</style>\n"+$F{party-street}+"\n"+$F{party-zip}+" "+$F{party-street}+" "+$F{party-city}+" "+$F{party-country-name}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica'>"+$F{party-full_name}+"</style>\n"+$F{party-zip}+" "+$F{party-street}+" "+$F{party-city}+" "+$F{party-country-name}]]></textFieldExpression>
 				</textField>
 				<line>
 					<reportElement x="305" y="72" width="240" height="1" uuid="5c37cf37-8f6b-4cdf-9f6c-b4bb87300966"/>
