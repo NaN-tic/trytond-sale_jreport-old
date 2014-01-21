@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sale" language="i18ngroovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="797f10e7-0b3e-4c35-9d66-a649d6b4a5ef">
 	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="27"/>
+	<property name="ireport.y" value="10"/>
 	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
@@ -338,15 +338,15 @@
 		</groupFooter>
 	</group>
 	<pageHeader>
-		<band height="129">
+		<band height="87">
 			<image>
-				<reportElement x="10" y="12" width="157" height="100" isRemoveLineWhenBlank="true" uuid="ab24e99e-d3dc-4dd8-919f-5b4c5115a8db">
+				<reportElement x="10" y="12" width="280" height="60" isRemoveLineWhenBlank="true" uuid="ab24e99e-d3dc-4dd8-919f-5b4c5115a8db">
 					<printWhenExpression><![CDATA[$F{company-logo}.length()>0]]></printWhenExpression>
 				</reportElement>
 				<imageExpression><![CDATA[$F{company-logo}]]></imageExpression>
 			</image>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="10" y="113" width="535" height="10" isRemoveLineWhenBlank="true" forecolor="#808080" uuid="cb7505ae-feb2-424b-854a-5aa280128a4f"/>
+				<reportElement x="10" y="75" width="535" height="10" isRemoveLineWhenBlank="true" forecolor="#808080" uuid="cb7505ae-feb2-424b-854a-5aa280128a4f"/>
 				<textElement textAlignment="Left">
 					<font size="7"/>
 				</textElement>
