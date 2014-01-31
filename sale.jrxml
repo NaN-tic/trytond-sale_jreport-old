@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sale" language="i18ngroovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="797f10e7-0b3e-4c35-9d66-a649d6b4a5ef">
 	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="9"/>
+	<property name="ireport.y" value="0"/>
 	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
@@ -229,42 +229,42 @@
 		<groupFooter>
 			<band height="104" splitType="Prevent">
 				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement x="430" y="57" width="95" height="14" uuid="656cea85-f02c-41bf-9e8a-90e24286e431"/>
+					<reportElement x="445" y="57" width="80" height="14" uuid="656cea85-f02c-41bf-9e8a-90e24286e431"/>
 					<textElement textAlignment="Right">
 						<font fontName="DejaVu Sans" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{total_amount-total_amount} ? $F{total_amount-total_amount} : 0]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement x="430" y="16" width="95" height="14" uuid="b3dd54c0-0d2f-44ba-8206-9da95d926c43"/>
+					<reportElement x="445" y="16" width="80" height="14" uuid="b3dd54c0-0d2f-44ba-8206-9da95d926c43"/>
 					<textElement textAlignment="Right">
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{untaxed_amount-untaxed_amount} ? $F{untaxed_amount-untaxed_amount} : 0]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement x="430" y="34" width="95" height="14" uuid="56bc960d-c419-46cb-8320-4710d6893e4a"/>
+					<reportElement x="445" y="34" width="80" height="14" uuid="56bc960d-c419-46cb-8320-4710d6893e4a"/>
 					<textElement textAlignment="Right">
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{tax_amount-tax_amount} ? $F{tax_amount-tax_amount} : 0]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="390" y="34" width="38" height="14" uuid="a7719139-d092-4421-ac55-9267952452a8"/>
+					<reportElement x="390" y="34" width="55" height="14" uuid="a7719139-d092-4421-ac55-9267952452a8"/>
 					<textElement>
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Tax")+":"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="390" y="57" width="38" height="14" uuid="e986da79-cb9f-4102-a9eb-e93a563f2ff6"/>
+					<reportElement x="390" y="57" width="55" height="14" uuid="e986da79-cb9f-4102-a9eb-e93a563f2ff6"/>
 					<textElement>
 						<font fontName="DejaVu Sans" size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Total")+":"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="390" y="16" width="38" height="14" uuid="08e99406-40c0-45bd-9af4-a6b168e24cb1"/>
+					<reportElement x="390" y="16" width="55" height="14" uuid="08e99406-40c0-45bd-9af4-a6b168e24cb1"/>
 					<textElement>
 						<font size="9" isBold="false"/>
 					</textElement>
