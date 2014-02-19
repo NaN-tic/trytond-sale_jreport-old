@@ -28,7 +28,7 @@ requires.append('trytond >= %s.%s, < %s.%s' %
 
 setup(name='trytonzz_sale_jreport',
     version=info.get('version', '0.0.1'),
-    description='Sale Jasper Report for sale order',
+    description='Tryton module to Jasper Report for sale order',
     author='Zikzakmedia SL',
     author_email='zikzak@zikzakmedia.com',
     url='http://www.zikzakmedia.com',
@@ -40,7 +40,7 @@ setup(name='trytonzz_sale_jreport',
         ],
     package_data={
         'trytond.modules.sale_jreport': info.get('xml', []) \
-            + ['tryton.cfg'],
+            + ['tryton.cfg', 'locale/*.po'],
         },
     classifiers=[
         'Development Status :: 5 - Production/Stable',
