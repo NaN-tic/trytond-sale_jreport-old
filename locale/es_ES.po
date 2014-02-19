@@ -40,7 +40,7 @@ msgstr "Tipo de pago"
 
 msgctxt "jasper:sale.sale:"
 msgid "Sale Order"
-msgstr "Comanda venda"
+msgstr "Pedido venta"
 
 msgctxt "jasper:sale.sale:"
 msgid "Salesman"
