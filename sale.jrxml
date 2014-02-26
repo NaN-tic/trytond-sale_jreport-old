@@ -200,14 +200,14 @@
 					<textFieldExpression><![CDATA[$F{shippment-full_address}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="10" y="5" width="279" height="21" forecolor="#010101" uuid="38d19167-80e2-4261-bed5-9763562e5546"/>
+					<reportElement x="10" y="5" width="280" height="15" forecolor="#010101" uuid="38d19167-80e2-4261-bed5-9763562e5546"/>
 					<textElement textAlignment="Left">
-						<font size="14" isBold="true"/>
+						<font size="12" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{state-state}.equals("quotation") || $F{state-state}.equals("draft")) ? tr($V{L},"Quotation")+" "+$F{reference-reference} : tr($V{L},"Sale Order")+" "+$F{reference-reference}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="10" y="25" width="228" height="12" uuid="26e6798f-861a-4c79-87d9-3a4c69a4afb3">
+					<reportElement x="10" y="22" width="228" height="12" uuid="26e6798f-861a-4c79-87d9-3a4c69a4afb3">
 						<printWhenExpression><![CDATA[$F{sale_date-sale_date} != null]]></printWhenExpression>
 					</reportElement>
 					<textElement>
