@@ -87,7 +87,7 @@
 		<fieldDescription><![CDATA[/data/record/invoice_address-invoice_address/full_address-full_address]]></fieldDescription>
 	</field>
 	<field name="shippment-full_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/party-party/addresses-addresses/full_address-full_address]]></fieldDescription>
+		<fieldDescription><![CDATA[/data/record/shipment_address-shipment_address/full_address-full_address]]></fieldDescription>
 	</field>
 	<field name="carrier-rec_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/carrier-carrier/rec_name-rec_name]]></fieldDescription>
