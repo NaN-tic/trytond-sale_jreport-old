@@ -74,6 +74,30 @@
 	<field name="party-lang" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/lang-lang/code-code]]></fieldDescription>
 	</field>
+	<field name="party-email" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/party-party/email-email]]></fieldDescription>
+	</field>
+	<field name="party-mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/party-party/mobile-mobile]]></fieldDescription>
+	</field>
+	<field name="party-phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/party-party/phone-phone]]></fieldDescription>
+	</field>
+	<field name="party-fax" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/party-party/fax-fax]]></fieldDescription>
+	</field>
+	<field name="invoice-email" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_address-invoice_address/email-email]]></fieldDescription>
+	</field>
+	<field name="invoice-phone" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_address-invoice_address/phone-phone]]></fieldDescription>
+	</field>
+	<field name="invoice-mobile" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_address-invoice_address/mobile-mobile]]></fieldDescription>
+	</field>
+	<field name="invoice-fax" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_address-invoice_address/fax-fax]]></fieldDescription>
+	</field>
 	<field name="payment_term-name" class="java.lang.Object">
 		<fieldDescription><![CDATA[/data/record/payment_term-payment_term/name-name]]></fieldDescription>
 	</field>
@@ -224,6 +248,34 @@
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Shipment Address")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="39" width="279" height="12" uuid="70dbbf08-888b-4e77-a5c9-0b27a89dec77"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{invoice-email} || $F{party-email}) ? $F{invoice-email} ? tr($V{L},"Email")+": "+$F{invoice-email} : tr($V{L},"Email")+": "+$F{party-email} : '']]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="51" width="279" height="12" uuid="81a95e5b-e904-4ced-81a8-82f79e6f2ea7"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{invoice-phone} || $F{party-phone}) ? $F{invoice-phone} ? tr($V{L},"Phone")+": "+$F{invoice-phone} : tr($V{L},"Phone")+": "+$F{party-phone} : '']]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="63" width="279" height="12" uuid="75394f81-b730-449a-a29c-779e7b559de1"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{invoice-mobile} || $F{party-mobile}) ? $F{invoice-mobile} ? tr($V{L},"Mobile")+": "+$F{invoice-mobile} : tr($V{L},"Mobile")+": "+$F{party-mobile} : '']]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="10" y="75" width="279" height="12" uuid="f2d9f535-1811-4d79-8bc4-5f338f5c3d19"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{invoice-fax} || $F{party-fax}) ? $F{invoice-fax} ? tr($V{L},"Fax")+": "+$F{invoice-fax} : tr($V{L},"Fax")+": "+$F{party-fax} : '']]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
