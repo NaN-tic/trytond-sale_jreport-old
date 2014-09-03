@@ -61,3 +61,19 @@ msgstr "Base imponible"
 msgctxt "jasper:sale.sale:"
 msgid "Total"
 msgstr "Total"
+
+msgctxt "jasper:sale.sale:"
+msgid "Email"
+msgstr "Email"
+
+msgctxt "jasper:sale.sale:"
+msgid "Phone"
+msgstr "Teléfono"
+
+msgctxt "jasper:sale.sale:"
+msgid "Mobile"
+msgstr "Móvil"
+
+msgctxt "jasper:sale.sale:"
+msgid "Fax"
+msgstr "Fax"
