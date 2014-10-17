@@ -56,8 +56,8 @@
 	<field name="party-name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/addresses-addresses/name-name]]></fieldDescription>
 	</field>
-	<field name="party-full_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/shipment_address-shipment_address/full_address-full_address]]></fieldDescription>
+	<field name="party-full_address_lang" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/shipment_address-shipment_address/full_address_lang-full_address_lang]]></fieldDescription>
 	</field>
 	<field name="party-street" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/addresses-addresses/street-street]]></fieldDescription>
@@ -107,11 +107,11 @@
 	<field name="payment_type-note" class="java.lang.Object">
 		<fieldDescription><![CDATA[/data/record/payment_type-payment_type/note-note]]></fieldDescription>
 	</field>
-	<field name="invoice-full_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/invoice_address-invoice_address/full_address-full_address]]></fieldDescription>
+	<field name="invoice-full_address_lang" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/invoice_address-invoice_address/full_address_lang-full_address_lang]]></fieldDescription>
 	</field>
-	<field name="shippment-full_address" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/shipment_address-shipment_address/full_address-full_address]]></fieldDescription>
+	<field name="shippment-full_address_lang" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/shipment_address-shipment_address/full_address_lang-full_address_lang]]></fieldDescription>
 	</field>
 	<field name="carrier-rec_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/carrier-carrier/rec_name-rec_name]]></fieldDescription>
@@ -211,7 +211,7 @@
 					<textElement markup="styled">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica'>"+$F{party-full_name}.replaceAll("&","&amp;")+"</style>\n"+$F{invoice-full_address}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["<style isBold='true' pdfFontName='Helvetica'>"+$F{party-full_name}.replaceAll("&","&amp;")+"</style>\n"+$F{invoice-full_address_lang}]]></textFieldExpression>
 				</textField>
 				<line>
 					<reportElement x="305" y="72" width="240" height="1" uuid="5c37cf37-8f6b-4cdf-9f6c-b4bb87300966"/>
@@ -221,7 +221,7 @@
 					<textElement>
 						<font size="9" isBold="false"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{shippment-full_address}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{shippment-full_address_lang}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="10" y="5" width="280" height="15" forecolor="#010101" uuid="38d19167-80e2-4261-bed5-9763562e5546"/>
