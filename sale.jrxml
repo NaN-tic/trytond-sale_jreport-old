@@ -47,7 +47,7 @@
 	<field name="company-footer" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company-company/footer-footer]]></fieldDescription>
 	</field>
-	<field name="company-sale_qty" class="java.lang.String">
+	<field name="company-sale_qty" class="java.lang.Boolean">
 		<fieldDescription><![CDATA[/data/record/company-company/sale_qty-sale_qty]]></fieldDescription>
 	</field>
 	<field name="party-full_name" class="java.lang.String">
