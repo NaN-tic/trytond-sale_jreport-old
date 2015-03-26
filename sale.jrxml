@@ -161,6 +161,9 @@
 	<field name="line-discount" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/lines-lines/discount-discount]]></fieldDescription>
 	</field>
+	<field name="line-type" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/lines-lines/type-type]]></fieldDescription>
+	</field>
 	<field name="user-name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/create_uid-create_uid/name-name]]></fieldDescription>
 	</field>
@@ -181,28 +184,28 @@
 				<textField>
 					<reportElement x="57" y="139" width="148" height="12" uuid="480c2baa-c354-4696-9624-c6328ee9294c"/>
 					<textElement>
-						<font size="9"/>
+						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Description")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="16" y="139" width="40" height="12" uuid="11ac5fde-4fc0-418d-bf89-a440dcf11d91"/>
 					<textElement textAlignment="Center">
-						<font size="9"/>
+						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Qty")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="407" y="139" width="50" height="12" uuid="e7c3d55a-4cc7-43eb-8105-5b5eae5f2ddf"/>
 					<textElement textAlignment="Right">
-						<font size="9"/>
+						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Price")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="490" y="139" width="48" height="12" uuid="d32f25ca-115d-4069-9f00-51fa8cfd3237"/>
 					<textElement textAlignment="Right">
-						<font size="9"/>
+						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Total")]]></textFieldExpression>
 				</textField>
@@ -410,35 +413,54 @@
 	<detail>
 		<band height="19" splitType="Stretch">
 			<textField isStretchWithOverflow="true">
-				<reportElement x="57" y="2" width="347" height="12" uuid="fee4defc-7102-4a87-85a6-b9e0e5c7c74f"/>
+				<reportElement x="16" y="2" width="474" height="12" uuid="a68e49fc-dca2-48bf-a369-91523da21914">
+					<printWhenExpression><![CDATA[$F{line-type} == "title" || $F{line-type} == "comment" || $F{line-type} == "subtotal"]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" markup="styled">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{line-note} ? $F{line-description}+"\n<style forecolor=\"#808080\">"+$F{line-note}+"</style>" : $F{line-description}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="57" y="2" width="347" height="12" uuid="fee4defc-7102-4a87-85a6-b9e0e5c7c74f">
+					<printWhenExpression><![CDATA[$F{line-type} == "line"]]></printWhenExpression>
+				</reportElement>
 				<textElement markup="styled">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{line-note} ? $F{line-description}+"\n<style forecolor=\"#808080\">"+$F{line-note}+"</style>" : $F{line-description}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00">
-				<reportElement x="407" y="2" width="50" height="12" uuid="52becf9f-b17b-495a-a978-e06b601c8c55"/>
+				<reportElement x="407" y="2" width="50" height="12" uuid="52becf9f-b17b-495a-a978-e06b601c8c55">
+					<printWhenExpression><![CDATA[$F{line-type} == "line"]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{gross_unit_price-gross_unit_price} ? $F{gross_unit_price-gross_unit_price} : $F{line-unit_price} ? $F{line-unit_price} : 0]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00;-#,##0.00">
-				<reportElement x="490" y="2" width="50" height="12" uuid="fba565ed-db97-4242-91ca-cece0bfef0c1"/>
+				<reportElement x="490" y="2" width="50" height="12" uuid="fba565ed-db97-4242-91ca-cece0bfef0c1">
+					<printWhenExpression><![CDATA[$F{line-type} == "line" || $F{line-type} == "subtotal"]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{line-amount} ? $F{line-amount} : 0]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="false">
-				<reportElement x="461" y="2" width="26" height="12" uuid="9651a8d5-b008-412f-bdeb-15a4634ed622"/>
+				<reportElement x="461" y="2" width="26" height="12" uuid="9651a8d5-b008-412f-bdeb-15a4634ed622">
+					<printWhenExpression><![CDATA[$F{line-type} == "line"]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{line-discount} ? "-"+ (int)Double.valueOf($F{line-discount}*100).doubleValue()+"%" : ""]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="16" y="2" width="40" height="12" uuid="845e3c2f-289f-4749-be42-e03b42c5ab6c"/>
+				<reportElement x="16" y="2" width="40" height="12" uuid="845e3c2f-289f-4749-be42-e03b42c5ab6c">
+					<printWhenExpression><![CDATA[$F{line-type} == "line"]]></printWhenExpression>
+				</reportElement>
 				<textElement textAlignment="Center">
 					<font size="9"/>
 				</textElement>
