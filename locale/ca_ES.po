@@ -11,6 +11,10 @@ msgid "Date"
 msgstr "Data"
 
 msgctxt "jasper:sale.sale:"
+msgid "Discount"
+msgstr "Descompte"
+
+msgctxt "jasper:sale.sale:"
 msgid "DISC"
 msgstr "Disc."
 
