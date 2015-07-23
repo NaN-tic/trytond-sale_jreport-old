@@ -56,9 +56,6 @@
 	<field name="party-name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/addresses-addresses/name-name]]></fieldDescription>
 	</field>
-	<field name="party-full_address_lang" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/shipment_address-shipment_address/full_address_lang-full_address_lang]]></fieldDescription>
-	</field>
 	<field name="party-street" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/party-party/addresses-addresses/street-street]]></fieldDescription>
 	</field>
