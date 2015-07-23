@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sale" language="i18ngroovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="797f10e7-0b3e-4c35-9d66-a649d6b4a5ef">
 	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="234"/>
 	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
@@ -173,6 +173,9 @@
 	<field name="gross_unit_price-gross_unit_price" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/lines-lines/gross_unit_price-gross_unit_price]]></fieldDescription>
 	</field>
+	<field name="sale_discount-sale_discount" class="java.lang.Number">
+		<fieldDescription><![CDATA[/data/record/sale_discount-sale_discount]]></fieldDescription>
+	</field>
 	<variable name="L" class="java.util.Locale">
 		<variableExpression><![CDATA[$F{party-lang} != null && $F{party-lang}.length() == 5 ? new Locale($F{party-lang}) : ( $F{party-lang} != null && $F{party-lang}.length() == 2 ? new Locale($F{party-lang}) : new Locale('en_US'))]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{party-lang} != null && $F{party-lang}.length() == 5 ? new Locale($F{party-lang}) : ( $F{party-lang} != null && $F{party-lang}.length() == 2 ? new Locale($F{party-lang}) : new Locale('en_US'))]]></initialValueExpression>
@@ -283,88 +286,88 @@
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="104" splitType="Prevent">
+			<band height="97" splitType="Prevent">
 				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement x="445" y="57" width="80" height="14" uuid="656cea85-f02c-41bf-9e8a-90e24286e431"/>
+					<reportElement x="445" y="68" width="80" height="14" uuid="656cea85-f02c-41bf-9e8a-90e24286e431"/>
 					<textElement textAlignment="Right">
 						<font fontName="DejaVu Sans" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{total_amount-total_amount} ? $F{total_amount-total_amount} : 0]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement x="445" y="16" width="80" height="14" uuid="b3dd54c0-0d2f-44ba-8206-9da95d926c43"/>
+					<reportElement x="445" y="27" width="80" height="14" uuid="b3dd54c0-0d2f-44ba-8206-9da95d926c43"/>
 					<textElement textAlignment="Right">
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{untaxed_amount-untaxed_amount} ? $F{untaxed_amount-untaxed_amount} : 0]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-					<reportElement x="445" y="34" width="80" height="14" uuid="56bc960d-c419-46cb-8320-4710d6893e4a"/>
+					<reportElement x="445" y="45" width="80" height="14" uuid="56bc960d-c419-46cb-8320-4710d6893e4a"/>
 					<textElement textAlignment="Right">
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{tax_amount-tax_amount} ? $F{tax_amount-tax_amount} : 0]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="390" y="34" width="55" height="14" uuid="a7719139-d092-4421-ac55-9267952452a8"/>
+					<reportElement x="390" y="45" width="55" height="14" uuid="a7719139-d092-4421-ac55-9267952452a8"/>
 					<textElement>
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Tax")+":"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="390" y="57" width="55" height="14" uuid="e986da79-cb9f-4102-a9eb-e93a563f2ff6"/>
+					<reportElement x="390" y="68" width="55" height="14" uuid="e986da79-cb9f-4102-a9eb-e93a563f2ff6"/>
 					<textElement>
 						<font fontName="DejaVu Sans" size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Total")+":"]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="390" y="16" width="55" height="14" uuid="08e99406-40c0-45bd-9af4-a6b168e24cb1"/>
+					<reportElement x="390" y="27" width="55" height="14" uuid="08e99406-40c0-45bd-9af4-a6b168e24cb1"/>
 					<textElement>
 						<font size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Untaxed")+":"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="10" y="71" width="367" height="29" isRemoveLineWhenBlank="true" uuid="e47cc87a-2ba2-4334-8d89-8103abed4308"/>
+					<reportElement x="10" y="62" width="367" height="29" isRemoveLineWhenBlank="true" uuid="e47cc87a-2ba2-4334-8d89-8103abed4308"/>
 					<textElement>
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{comment-comment}]]></textFieldExpression>
 				</textField>
 				<line>
-					<reportElement x="390" y="50" width="150" height="1" uuid="c2b74423-a219-4eca-9d58-11e611bb40bc"/>
+					<reportElement x="390" y="61" width="150" height="1" uuid="c2b74423-a219-4eca-9d58-11e611bb40bc"/>
 				</line>
 				<textField>
-					<reportElement x="527" y="16" width="19" height="12" uuid="5c4d950c-1f33-4dfe-ac42-5216fb4f12ec"/>
+					<reportElement x="527" y="27" width="19" height="12" uuid="5c4d950c-1f33-4dfe-ac42-5216fb4f12ec"/>
 					<textElement>
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{currency-symbol}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="527" y="34" width="19" height="12" uuid="8ee41cfb-00cd-4b0f-b181-9639bcee1da6"/>
+					<reportElement x="527" y="45" width="19" height="12" uuid="8ee41cfb-00cd-4b0f-b181-9639bcee1da6"/>
 					<textElement>
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{currency-symbol}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="527" y="57" width="19" height="12" uuid="56a91205-fe35-4ff4-a478-fec27930dfeb"/>
+					<reportElement x="527" y="68" width="19" height="12" uuid="56a91205-fe35-4ff4-a478-fec27930dfeb"/>
 					<textElement>
 						<font size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{currency-symbol}]]></textFieldExpression>
 				</textField>
 				<line>
-					<reportElement x="390" y="12" width="150" height="1" uuid="f28b93a7-f911-4823-af6a-5830fda7176f"/>
+					<reportElement x="390" y="23" width="150" height="1" uuid="f28b93a7-f911-4823-af6a-5830fda7176f"/>
 				</line>
 				<line>
 					<reportElement x="10" y="3" width="530" height="1" uuid="b7222a06-bef9-4e1d-9d7a-be5d6923c473"/>
 				</line>
 				<textField>
-					<reportElement x="10" y="16" width="367" height="12" uuid="2ec6e329-9835-42af-bf17-bf12b2127f0b">
+					<reportElement x="10" y="11" width="367" height="12" uuid="2ec6e329-9835-42af-bf17-bf12b2127f0b">
 						<printWhenExpression><![CDATA[$F{payment_term-name} != '']]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -373,7 +376,7 @@
 					<textFieldExpression><![CDATA[tr($V{L},"Payment Term")+": "+$F{payment_term-name}.get($F{party-lang})]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="10" y="55" width="367" height="12" uuid="34ef4275-ed1a-439f-9507-c72ce6361d30">
+					<reportElement x="10" y="48" width="367" height="12" uuid="34ef4275-ed1a-439f-9507-c72ce6361d30">
 						<printWhenExpression><![CDATA[$F{carrier-rec_name} != '']]></printWhenExpression>
 					</reportElement>
 					<textElement>
@@ -382,13 +385,31 @@
 					<textFieldExpression><![CDATA[tr($V{L},"Carrier")+": "+$F{carrier-rec_name}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="10" y="28" width="367" height="23" uuid="98c173b1-881b-4b80-b4bb-8f95ea8abdbd">
+					<reportElement x="10" y="24" width="367" height="23" uuid="98c173b1-881b-4b80-b4bb-8f95ea8abdbd">
 						<printWhenExpression><![CDATA[$F{payment_type-name}.get($F{party-lang}) != null]]></printWhenExpression>
 					</reportElement>
 					<textElement>
 						<font size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Payment Type")+": "+$F{payment_type-name}.get($F{party-lang})+"\n"+$F{payment_type-note}.get($F{party-lang}, '')]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="390" y="11" width="67" height="12" uuid="ac3c9321-b48f-4c26-893d-8c7fc890dc9f">
+						<printWhenExpression><![CDATA[$F{sale_discount-sale_discount} != 0]]></printWhenExpression>
+					</reportElement>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[tr($V{L},"Discount")+":"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="462" y="11" width="76" height="12" uuid="73c81d0c-230b-4642-83a9-68aeade2aa3a">
+						<printWhenExpression><![CDATA[$F{sale_discount-sale_discount} != 0]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Right">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[Double.valueOf($F{sale_discount-sale_discount}*100).doubleValue()+"%"]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupFooter>
