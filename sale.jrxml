@@ -20,8 +20,8 @@
 	<field name="company-name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company-company/party-party/name-name]]></fieldDescription>
 	</field>
-	<field name="company-vat_number" class="java.lang.String">
-		<fieldDescription><![CDATA[/data/record/company-company/party-party/vat_number-vat_number]]></fieldDescription>
+	<field name="company-vat_code" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/company-company/party-party/vat_code-vat_code]]></fieldDescription>
 	</field>
 	<field name="company-phone" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/company-company/party-party/phone-phone]]></fieldDescription>
@@ -524,7 +524,7 @@
 				<textElement>
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{company-vat_number}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{company-vat_code}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement x="9" y="73" width="535" height="10" isRemoveLineWhenBlank="true" forecolor="#808080" uuid="e5d664fa-1a05-49ca-8267-3e7d08009c64"/>
