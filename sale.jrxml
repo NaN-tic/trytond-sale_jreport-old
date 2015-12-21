@@ -3,7 +3,7 @@
 	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="234"/>
-	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
+	<property name="TRYTON_RELATIONS" value="lines"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
 	</parameter>
