@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sale" language="i18ngroovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="797f10e7-0b3e-4c35-9d66-a649d6b4a5ef">
 	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="234"/>
+	<property name="ireport.y" value="46"/>
 	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
@@ -173,6 +173,9 @@
 	<field name="sale_discount-sale_discount" class="java.lang.Number">
 		<fieldDescription><![CDATA[/data/record/sale_discount-sale_discount]]></fieldDescription>
 	</field>
+	<field name="sale_description" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/description-description]]></fieldDescription>
+	</field>
 	<variable name="L" class="java.util.Locale">
 		<variableExpression><![CDATA[$F{party-lang} != null && $F{party-lang}.length() == 5 ? new Locale($F{party-lang}) : ( $F{party-lang} != null && $F{party-lang}.length() == 2 ? new Locale($F{party-lang}) : new Locale('en_US'))]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{party-lang} != null && $F{party-lang}.length() == 5 ? new Locale($F{party-lang}) : ( $F{party-lang} != null && $F{party-lang}.length() == 2 ? new Locale($F{party-lang}) : new Locale('en_US'))]]></initialValueExpression>
@@ -279,6 +282,13 @@
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{invoice-fax} || $F{party-fax}) ? $F{invoice-fax} ? tr($V{L},"Fax")+": "+$F{invoice-fax} : tr($V{L},"Fax")+": "+$F{party-fax} : '']]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="10" y="106" width="280" height="14" uuid="b2173c65-7503-41d1-82d1-340abde1d4ad"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{sale_description}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
