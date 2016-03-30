@@ -113,6 +113,9 @@
 	<field name="carrier-rec_name" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/carrier-carrier/rec_name-rec_name]]></fieldDescription>
 	</field>
+	<field name="number-number" class="java.lang.String">
+		<fieldDescription><![CDATA[/data/record/number-number]]></fieldDescription>
+	</field>
 	<field name="reference-reference" class="java.lang.String">
 		<fieldDescription><![CDATA[/data/record/reference-reference]]></fieldDescription>
 	</field>
@@ -234,7 +237,7 @@
 					<textElement textAlignment="Left">
 						<font size="12" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{state-state}.equals("quotation") || $F{state-state}.equals("draft")) ? tr($V{L},"Quotation")+" "+$F{reference-reference} : tr($V{L},"Sale Order")+" "+$F{reference-reference}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{state-state}.equals("quotation") || $F{state-state}.equals("draft")) ? tr($V{L},"Quotation")+" "+$F{number-number} : tr($V{L},"Sale Order")+" "+$F{reference-reference}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="10" y="22" width="228" height="12" uuid="26e6798f-861a-4c79-87d9-3a4c69a4afb3">
@@ -284,11 +287,18 @@
 					<textFieldExpression><![CDATA[($F{invoice-fax} || $F{party-fax}) ? $F{invoice-fax} ? tr($V{L},"Fax")+": "+$F{invoice-fax} : tr($V{L},"Fax")+": "+$F{party-fax} : '']]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="10" y="106" width="280" height="14" uuid="b2173c65-7503-41d1-82d1-340abde1d4ad"/>
+					<reportElement x="10" y="110" width="280" height="14" uuid="b2173c65-7503-41d1-82d1-340abde1d4ad"/>
 					<textElement>
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{sale_description}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="10" y="96" width="280" height="14" uuid="6f4d9338-b449-47cd-a5d8-1b65ad8653fe"/>
+					<textElement>
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{reference-reference}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
