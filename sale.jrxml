@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sale" language="i18ngroovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="797f10e7-0b3e-4c35-9d66-a649d6b4a5ef">
-	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.zoom" value="1.2100000000000024"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="238"/>
+	<property name="ireport.y" value="0"/>
 	<property name="TRYTON_RELATIONS" value="[&apos;lines&apos;]"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["/"]]></defaultValueExpression>
@@ -194,7 +194,7 @@
 		<groupHeader>
 			<band height="155">
 				<textField>
-					<reportElement x="71" y="139" width="134" height="12" uuid="480c2baa-c354-4696-9624-c6328ee9294c"/>
+					<reportElement x="75" y="139" width="134" height="12" uuid="480c2baa-c354-4696-9624-c6328ee9294c"/>
 					<textElement>
 						<font size="9" isBold="true"/>
 					</textElement>
@@ -466,7 +466,7 @@
 				<textFieldExpression><![CDATA[$F{line-note} ? $F{line-description}+"\n<style forecolor=\"#808080\">"+$F{line-note}+"</style>" : $F{line-description}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="71" y="2" width="333" height="12" uuid="fee4defc-7102-4a87-85a6-b9e0e5c7c74f">
+				<reportElement x="76" y="2" width="328" height="12" uuid="fee4defc-7102-4a87-85a6-b9e0e5c7c74f">
 					<printWhenExpression><![CDATA[$F{line-type} == "line"]]></printWhenExpression>
 				</reportElement>
 				<textElement markup="styled">
@@ -511,9 +511,12 @@
 				<textFieldExpression><![CDATA[$F{line-quantity} ? $F{company-sale_qty} ? (int)Double.valueOf($F{line-quantity}.trim()).doubleValue() : Double.valueOf($F{line-quantity}.trim()).doubleValue() : '0']]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="56" y="2" width="15" height="12" uuid="426c3ed5-6c31-49f9-845f-e4229cda14d2">
+				<reportElement x="56" y="3" width="20" height="10" uuid="426c3ed5-6c31-49f9-845f-e4229cda14d2">
 					<printWhenExpression><![CDATA[$F{line-type} == "line" & $F{company-show_uom}]]></printWhenExpression>
 				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{line-symbol}]]></textFieldExpression>
 			</textField>
 		</band>
