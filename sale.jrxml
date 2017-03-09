@@ -196,28 +196,28 @@
 				<textField>
 					<reportElement x="75" y="139" width="134" height="12" uuid="480c2baa-c354-4696-9624-c6328ee9294c"/>
 					<textElement>
-						<font size="9" isBold="true"/>
+						<font size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Description")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="16" y="139" width="40" height="12" uuid="11ac5fde-4fc0-418d-bf89-a440dcf11d91"/>
-					<textElement textAlignment="Center">
-						<font size="9" isBold="true"/>
+					<textElement textAlignment="Right">
+						<font size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Qty")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="407" y="139" width="50" height="12" uuid="e7c3d55a-4cc7-43eb-8105-5b5eae5f2ddf"/>
 					<textElement textAlignment="Right">
-						<font size="9" isBold="true"/>
+						<font size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Price")]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="490" y="139" width="48" height="12" uuid="d32f25ca-115d-4069-9f00-51fa8cfd3237"/>
 					<textElement textAlignment="Right">
-						<font size="9" isBold="true"/>
+						<font size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[tr($V{L},"Total")]]></textFieldExpression>
 				</textField>
@@ -505,7 +505,7 @@
 				<reportElement x="16" y="2" width="40" height="12" uuid="845e3c2f-289f-4749-be42-e03b42c5ab6c">
 					<printWhenExpression><![CDATA[$F{line-type} == "line"]]></printWhenExpression>
 				</reportElement>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Right">
 					<font size="9"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{line-quantity} ? $F{company-sale_qty} ? (int)Double.valueOf($F{line-quantity}.trim()).doubleValue() : Double.valueOf($F{line-quantity}.trim()).doubleValue() : '0']]></textFieldExpression>
